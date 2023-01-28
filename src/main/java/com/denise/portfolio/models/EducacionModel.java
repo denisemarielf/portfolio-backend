@@ -1,5 +1,5 @@
 package com.denise.portfolio.models;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 
 @Entity
@@ -9,7 +9,7 @@ public class EducacionModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
-	private Integer id;	
+	private Long id;	
 	private String escuela;
 	private String titulo;		
 	private String imagen;
@@ -17,10 +17,10 @@ public class EducacionModel {
 	private Integer puntaje;
 	private Integer inicio;
 	private Integer fin;
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getEscuela() {

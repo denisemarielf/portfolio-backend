@@ -26,6 +26,7 @@ public class ProyectoService {
 			proyectoRepository.deleteById(id);
 			return true;
 		} catch (Exception err) {
+			System.out.print(err);
 			return false;
 		}
 	}

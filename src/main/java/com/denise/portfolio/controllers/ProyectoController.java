@@ -3,6 +3,9 @@ package com.denise.portfolio.controllers;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +18,8 @@ import com.denise.portfolio.services.ProyectoService;
 
 @RestController
 @RequestMapping("/proyecto")
+@CrossOrigin(origins = {"http://localhost:8080"})
+
 public class ProyectoController {
 	@Autowired
 	ProyectoService proyectoService;
@@ -24,12 +29,13 @@ public class ProyectoController {
 		return proyectoService.obtenerProyectos();
 	}
 	
-	@PostMapping
+
+	@PostMapping()
 	public ProyectoModel guardarProyecto(@RequestBody ProyectoModel proyecto) {
 		return this.proyectoService.guardarProyecto(proyecto);
 	}
 	
-	@GetMapping(path = "/{id}")
+	@DeleteMapping(path = "/{id}")
 	public String eliminarPorId(@PathVariable("id") Long id) {
 		boolean ok = this.proyectoService.eliminarProyecto(id);
 		if (ok) {

@@ -3,6 +3,7 @@ package com.denise.portfolio.controllers;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.denise.portfolio.models.HabilidadModel;
@@ -24,7 +25,8 @@ public class HabilidadController {
 		return this.habilidadService.guardarHabilidad(habilidad);
 	}
 	
-	@GetMapping("/{id}")
+
+	@DeleteMapping(path = "/{id}")
 	public String eliminarPorId(@PathVariable("id") Long id) {
 		boolean ok = this.habilidadService.eliminarHabilidad(id);
 		if (ok) {

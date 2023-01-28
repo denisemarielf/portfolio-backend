@@ -1,6 +1,6 @@
 package com.denise.portfolio.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name="habilidades")
@@ -9,14 +9,14 @@ public class HabilidadModel {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(unique=true, nullable=false)
-	private Integer id;
+	private Long id;
 	private String titulo;
 	private Integer nivel;
 	private String tipo;
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getTitulo() {

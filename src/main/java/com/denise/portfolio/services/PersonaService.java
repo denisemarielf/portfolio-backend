@@ -1,6 +1,7 @@
 package com.denise.portfolio.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,8 @@ public class PersonaService {
 	@Autowired
 	PersonaRepository personaRepository;
 	
-	public ArrayList <PersonaModel> obtenerPersona(){
-		return (ArrayList <PersonaModel>) personaRepository.findAll();
+	public Optional<PersonaModel> obtenerPersona(Long id){
+		return personaRepository.findById(id);
 	}
 	
 	public PersonaModel guardarPersona(PersonaModel persona) {
@@ -29,4 +30,6 @@ public class PersonaService {
 			return false;
 		}
 	}
+	
+
 }
