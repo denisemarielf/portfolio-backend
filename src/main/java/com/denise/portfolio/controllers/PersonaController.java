@@ -23,18 +23,13 @@ public class PersonaController {
 	}
 	
 	
-	@PostMapping()
+	@PostMapping(path="/create")
 	public PersonaModel guardarPersona(@RequestBody PersonaModel persona) {
 		return personaService.guardarPersona(persona);
 	}
 	
-	@DeleteMapping(path="/{id}")
-	public String eliminarPorId(@PathVariable("id") Long id) {
-		boolean ok = this.personaService.eliminarPersona(id);
-		if (ok){
-			return "persona eliminada";
-		} else {
-			return "error";
-		}
+	@DeleteMapping(path="/delete/{id}")
+	public boolean eliminarPorId(@PathVariable("id") Long id) {
+		return this.personaService.eliminarPersona(id);
 	}
 }

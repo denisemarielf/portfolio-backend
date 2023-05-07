@@ -13,6 +13,7 @@ public class HabilidadModel {
 	private String titulo;
 	private Integer nivel;
 	private String tipo;
+	private String imagen;
 	public Long getId() {
 		return id;
 	}
@@ -36,6 +37,12 @@ public class HabilidadModel {
 	}
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 	
 }

@@ -18,7 +18,7 @@ import com.denise.portfolio.services.ProyectoService;
 
 @RestController
 @RequestMapping("/proyecto")
-@CrossOrigin(origins = {"http://localhost:8080"})
+@CrossOrigin(origins = {"http://localhost:4200"})
 
 public class ProyectoController {
 	@Autowired
@@ -30,18 +30,13 @@ public class ProyectoController {
 	}
 	
 
-	@PostMapping()
+	@PostMapping(path="/create")
 	public ProyectoModel guardarProyecto(@RequestBody ProyectoModel proyecto) {
 		return this.proyectoService.guardarProyecto(proyecto);
 	}
 	
-	@DeleteMapping(path = "/{id}")
-	public String eliminarPorId(@PathVariable("id") Long id) {
-		boolean ok = this.proyectoService.eliminarProyecto(id);
-		if (ok) {
-			return "Se elimino proyecto";
-		} else {
-			return "Ocurrio un error";
-		}
+	@DeleteMapping(path = "/delete/{id}")
+	public boolean eliminarPorId(@PathVariable("id") Long id) {
+		return this.proyectoService.eliminarProyecto(id);
 	}
 }

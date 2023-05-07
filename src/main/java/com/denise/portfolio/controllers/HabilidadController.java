@@ -11,6 +11,8 @@ import com.denise.portfolio.services.HabilidadService;
 
 @RestController
 @RequestMapping("/habilidades")
+@CrossOrigin(origins = {"http://localhost:4200"})
+
 public class HabilidadController {
  	@Autowired
 	HabilidadService habilidadService;
@@ -20,20 +22,15 @@ public class HabilidadController {
 		return habilidadService.obtenerHabilidad();
 	}
 	
-	@PostMapping()
+	@PostMapping(path="/create")
 	public HabilidadModel guardarHabilidad(@RequestBody HabilidadModel habilidad) {
 		return this.habilidadService.guardarHabilidad(habilidad);
 	}
 	
 
-	@DeleteMapping(path = "/{id}")
-	public String eliminarPorId(@PathVariable("id") Long id) {
-		boolean ok = this.habilidadService.eliminarHabilidad(id);
-		if (ok) {
-			return "Habilidad eliminada";
-		} else {
-			return "Ocurrio un error";
-		}
+	@DeleteMapping(path = "/delete/{id}")
+	public boolean eliminarPorId(@PathVariable("id") Long id) {
+		return this.habilidadService.eliminarHabilidad(id);
 	}
 
 	

@@ -41,10 +41,24 @@ public class ProyectoModel {
 	public void setLink(String link) {
 		this.link = link;
 	}
+	public String getRepositorio() {
+		return repositorio;
+	}
+	public void setRepositorio(String repositorio) {
+		this.repositorio = repositorio;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	private String titulo;
 	@JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
 	@Column(name="fecha")
 	private String fecha;
 	private String descripcion;
 	private String link;
+	private String repositorio;
+	private String imagen;
 }

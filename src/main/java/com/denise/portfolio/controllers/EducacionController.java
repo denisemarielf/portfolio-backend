@@ -31,21 +31,16 @@ public class EducacionController {
 	}
 	
 
-	@PostMapping()
-	@PostAuthorize("hasRole('ADMIN')")
+	
+	@PostMapping(path="/create")
 	public EducacionModel guardarEducacion(@RequestBody EducacionModel educacion) {
 		return this.educacionService.guardarEducacion(educacion);
 	}
 	
 
 	
-	@DeleteMapping("/{id}")
-	public String eliminarPorId(@PathVariable("id") Long id) {
-		boolean ok = this.educacionService.eliminarEducacion(id);
-		if (ok) {
-			return "Se elimino usuario";
-		} else {
-			return "Ocurrio un error";
-		}
+	@DeleteMapping(path="/delete/{id}")
+	public boolean eliminarPorId(@PathVariable("id") Long id) {
+		return this.educacionService.eliminarEducacion(id);
 	}
 }

@@ -22,8 +22,9 @@ public class ExperienciaModel {
 	@JsonFormat(pattern = "yyyy-MM-dd", shape = Shape.STRING)
 	@Column(name="fin")
 	private String fin;
+	
 	public Long getId() {
-		return id;
+		return id;	
 	}
 	public void setId(Long id) {
 		this.id = id;
