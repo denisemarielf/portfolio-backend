@@ -12,7 +12,7 @@ import com.denise.portfolio.services.ExperienciaService;
 
 @RestController
 @RequestMapping("/experiencia")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://portfolio-denise.firebaseapp.com", "https://portfolio-denise.web.app", "http://localhost:4200"})
 public class ExperienciaController {
 	@Autowired
 	ExperienciaService experienciaService;

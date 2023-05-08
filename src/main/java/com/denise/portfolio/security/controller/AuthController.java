@@ -31,7 +31,7 @@ import com.denise.portfolio.security.service.RolService;
 import com.denise.portfolio.security.service.UsuarioService;
 
 @RestController
-@CrossOrigin
+
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;

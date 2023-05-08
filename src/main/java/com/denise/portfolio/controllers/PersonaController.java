@@ -12,7 +12,7 @@ import com.denise.portfolio.services.PersonaService;
 
 @RestController
 @RequestMapping("/persona")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://portfolio-denise.firebaseapp.com", "https://portfolio-denise.web.app", "http://localhost:4200"})
 public class PersonaController {
 	@Autowired
 	PersonaService personaService;

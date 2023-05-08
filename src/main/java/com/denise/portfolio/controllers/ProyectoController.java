@@ -18,7 +18,7 @@ import com.denise.portfolio.services.ProyectoService;
 
 @RestController
 @RequestMapping("/proyecto")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://portfolio-denise.firebaseapp.com", "https://portfolio-denise.web.app", "http://localhost:4200"})
 
 public class ProyectoController {
 	@Autowired

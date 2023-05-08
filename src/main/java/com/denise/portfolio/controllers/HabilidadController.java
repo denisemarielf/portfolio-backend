@@ -11,7 +11,7 @@ import com.denise.portfolio.services.HabilidadService;
 
 @RestController
 @RequestMapping("/habilidades")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://portfolio-denise.firebaseapp.com", "https://portfolio-denise.web.app", "http://localhost:4200"})
 
 public class HabilidadController {
  	@Autowired
