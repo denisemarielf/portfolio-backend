@@ -1,7 +1,4 @@
 FROM amazoncorretto:17
-
 MAINTAINER denisemarielf
-
-COPY target/ProyectoFinal.jar ProyectoFinal.jar
-
-ENTRYPOINT ["java","-jar","/ProyectoFinal.jar"]
+COPY target/ProyectoFinal.jar portfolio-backend.jar
+ENTRYPOINT ["java","-jar","/portfolio-backend.jar"]
