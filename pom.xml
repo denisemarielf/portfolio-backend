@@ -52,6 +52,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -64,16 +65,8 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
-        <dependency>
-    		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-    		<groupId>org.thymeleaf.extras</groupId>
-    		<artifactId>thymeleaf-extras-springsecurity5</artifactId>
-		</dependency>
+            </dependency>
+
     </dependencies>
 
     <build>
@@ -82,8 +75,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                	<mainClass>com.denise.portfolio</mainClass>
-                	<layout>JAR</layout>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -94,4 +85,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
